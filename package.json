@@ -1,0 +1,25 @@
+{
+    "name": "tagscript",
+    "displayName": "TagScript",
+    "description": "Carl-bot's TagScript",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tse",
+            "aliases": ["TagScript", "tse"],
+            "extensions": ["tse"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tse",
+            "scopeName": "source.tse",
+            "path": "./syntaxes/tse.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,134 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "TagScript",
+	"patterns": [
+
+		{
+			"include": "#blocks"
+		}
+	],
+	"repository": {
+		"blocks": {
+			"patterns": [{
+				"include": "#block-PCB"
+			}, {
+				"include": "#block-PC"
+			}, {
+				"include": "#block-C"
+			}, {
+				"include": "#block-"
+			}]
+		},
+		"block-": {
+			"match": "(?i)({)(override|silent|dm)(})",
+			"captures": {
+				"1": {
+					"name": "entity.name.function"
+				},
+				"2": {
+					"name": "entity.name.class"
+				},
+				"3": {
+					"name": "entity.name.function"
+				}
+			},
+			"patterns": [{
+				"include": "blocks"
+			}]
+		},
+		"block-PCB": {
+			"match": "(?i)({)(if)(\\()(.*)(\\))(:)(.*?)(?:(\\|)(.*?))(})",
+			"captures": {
+				"1": {
+					"name": "entity.name.function"
+				},
+				"2": {
+					"name": "entity.name.class"
+				},
+				"3": {
+					"name": "entity.name.function"
+				},
+				"4": {
+					"name": "entity.name.tag"
+				},
+				"5": {
+					"name": "entity.name.function"
+				},
+				"6": {
+					"name": "entity.name.function"
+				},
+				"7": {
+					"name": "entity.name.tag"
+				},
+				"8": {
+					"name": "entity.name.function"
+				},
+				"9": {
+					"name": "entity.name.tag"
+				},
+				"10": {
+					"name": "entity.name.function"
+				}
+			},
+			"patterns": [{
+				"include": "blocks"
+			}]
+		},
+		"block-PC": {
+			"match": "(?i)({)(=|if|require|blacklist)(\\()(.*)(\\))(:)(.*?)(})",
+			"captures": {
+				"1": {
+					"name": "entity.name.function"
+				},
+				"2": {
+					"name": "entity.name.class"
+				},
+				"3": {
+					"name": "entity.name.function"
+				},
+				"4": {
+					"name": "entity.name.tag"
+				},
+				"5": {
+					"name": "entity.name.function"
+				},
+				"6": {
+					"name": "entity.name.function"
+				},
+				"7": {
+					"name": "entity.name.tag"
+				},
+				"8": {
+					"name": "entity.name.function"
+				}
+			},
+			"patterns": [{
+				"include": "blocks"
+			}]
+		},
+		"block-C": {
+			"match": "(?i)({)(require|blacklist|redirect)(:)(.*?)(})",
+			"captures": {
+				"1": {
+					"name": "entity.name.function"
+				},
+				"2": {
+					"name": "entity.name.class"
+				},
+				"3": {
+					"name": "entity.name.function"
+				},
+				"4": {
+					"name": "entity.name.tag"
+				},
+				"5": {
+					"name": "entity.name.function"
+				}
+			},
+			"patterns": [{
+				"include": "blocks"
+			}]
+		}
+	},
+	"scopeName": "source.tse"
+}
